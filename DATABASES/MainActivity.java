@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,45 +17,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        StudentsDatabaseHandler db = new StudentsDatabaseHandler(this);
+        EventsDatabaseHandler db = new EventsDatabaseHandler(this);
 
         textView = (TextView) findViewById(R.id.textView);
 
+
+
 //        db.createTable();
 //        db.dropTable();
+
+
+        db.addEvent(new Event("12", "12/12/12", "first note", "chal"));
+        db.addEvent(new Event("17", "4/545/45", "second note", "daal"));
+        db.addEvent(new Event("19", "232/34/34", "third note", "chos"));
+//        db.addEvent(new Event("16", "1752/412/102", "fourth note", "a girl me in"));
+//        db.addEvent(new Event("14", "912/142/712", "fifth note", "chai"));
+//        db.addEvent(new Event("10", "23/123/675", "sixth note", "nachos"));
+
 //        sst = "TABLE CONTACTS DROPPED SUCESSFULLY";
-//        db.addStudent(new Student("dipto", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
-//        db.addStudent(new Student("dipto", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
-//        db.addStudent(new Student("dipto", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
-//        db.addStudent(new Student("dipto", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
-//        db.addStudent(new Student("dipto", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
-
-//        db.addStudent(new Student("mara", "tolarbag", "dipto's routine", "1000", "dipto's note", "12"));
 //
-//        db.addStudent(new Student("mara", "tolarbag", "dipto's routine", "345345", "dipto's note", "12"));
-//        db.addStudent(new Student("mara", "tolarbag", "dipto's routine", "768654", "dipto's note", "17"));
-//        db.addStudent(new Student("mara", "tolarbag", "dipto's routine", "89632", "dipto's note", "77"));
-//        db.deleteContact(new Contact(5));
+//        db.deleteDate(new Date(4));
 
-//        db.deleteStudent(new Student(6));
 //
 //        Log.d("Reading: ", "Reading all contacts..");
-//        List<Student> students = db.getAllStudents();
-//
-//
-//
-//        for (Student student : students) {
-//            sst += student.getStudentId()+ "--->" +
-//                    student.getStudentName()+ "--->" +
-//                    student.getAddress()+ "--->" +
-//                    student.getRoutine()+ "--->" +
-//                    student.getSalary()+ "--->" +
-//                    student.getNote()+ "--->" +
-//                    student.getDaysToGetSalary()+ "\n" ;
-//        }
-//
-////        sst = db.getStudent(8).getSalary();
-//        textView.setText(sst);
+        List<Event> events = new ArrayList<>();
+
+
+
+        for (Event event: events) {
+            sst += event.getEventId()+ "  --->  " +
+                    event.getDate()+ "  --->  " +
+                    event.getTime()+ "  --->  " +
+                    event.getNote()+ "  --->  " +
+                    event.getReminder()+ "\n" ;
+            System.out.println(sst);
+        }
+
+////        sst = String.valueOf(db.getEventsCount());
+
 
     }
 }
