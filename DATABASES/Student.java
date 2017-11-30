@@ -10,43 +10,37 @@ public class Student {
     private String address;
     private String routine;
     private String salary;
-    private String daysToGetSalary;
     private String note;
+    private String daysToGetSalary;
 
-    public Student(){}
+    public Student() {
+    }
 
     public Student(int studentId) {
         this.studentId = studentId;
     }
 
-
+    public Student(String studentName, String address, String routine,
+                   String salary, String note, String daysToGetSalary) {
+        this.studentName = studentName;
+        this.address = address;
+        this.routine = routine;
+        this.salary = salary;
+        this.note = note;
+        this.daysToGetSalary = daysToGetSalary;
+    }
 
     public Student(int studentId, String studentName, String address,
-                   String routine, String salary, String daysToGetSalary,
-                   String note) {
+                   String routine, String salary, String note,
+                   String daysToGetSalary) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.address = address;
         this.routine = routine;
         this.salary = salary;
-        this.daysToGetSalary = daysToGetSalary;
         this.note = note;
-    }
-
-
-
-    public Student(String studentName, String address, String routine,
-                   String salary, String daysToGetSalary, String note) {
-        this.studentName = studentName;
-        this.address = address;
-        this.routine = routine;
-        this.salary = salary;
         this.daysToGetSalary = daysToGetSalary;
-        this.note = note;
     }
-
-
-
 
     public int getStudentId() {
         return studentId;
@@ -88,19 +82,19 @@ public class Student {
         this.salary = salary;
     }
 
-    public String getDaysToGetSalary() {
-        return daysToGetSalary;
-    }
-
-    public void setDaysToGetSalary(String daysToGetSalary) {
-        this.daysToGetSalary = daysToGetSalary;
-    }
-
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getDaysToGetSalary() {
+        return daysToGetSalary;
+    }
+
+    public void setDaysToGetSalary(String daysToGetSalary) {
+        this.daysToGetSalary = daysToGetSalary;
     }
 }
